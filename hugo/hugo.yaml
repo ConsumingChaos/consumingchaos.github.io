@@ -1,0 +1,31 @@
+baseURL: https://consumingchaos.github.io/
+languageCode: en-us
+title: Consuming Chaos Blog
+theme: hugo-blog-awesome
+
+defaultContentLanguage: en-us
+enableEmoji: true
+
+googleAnalytics: "G-B60D5XNZS2"
+disqusShortname: "consuming-chaos"
+
+menu:
+  main:
+    - pageRef: /
+      name: Home
+      url: /
+      weight: 10
+    - pageRef: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+
+params:
+  sitename: Consuming Chaos Blog
+  defaultColor: dark
+  description: Consuming Chaos Blog
+  mainSections:
+    - posts
+  socialIcons:
+    - name: RSS
+      url: index.xml
