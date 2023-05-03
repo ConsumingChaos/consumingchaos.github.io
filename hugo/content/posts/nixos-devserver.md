@@ -1,6 +1,7 @@
 ---
 title: NixOS DevServer
 date: 2023-05-11T18:00:00-07:00
+author: James Leitch
 tags:
   - nix
   - nixpkgs
