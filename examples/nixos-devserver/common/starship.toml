@@ -1,0 +1,70 @@
+format = "[┌─](bold blue) ($username)($hostname)($directory)($fill)($character$status)($cmd_duration)($jobs)($git_branch$git_state)($time)\n[└](bold blue) "
+
+scan_timeout = 30
+add_newline = true
+
+[character]
+format = '$symbol'
+success_symbol = '[ ](bold green)'
+error_symbol = ''
+disabled = false
+
+[cmd_duration]
+min_time = 2000
+show_milliseconds = false
+format = '  [$duration  ]($style)'
+style = 'purple'
+disabled = false
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+format = '  [($read_only  )]($read_only_style)[  $path]($style)'
+style = 'white'
+disabled = false
+read_only = ''
+
+[fill]
+symbol = " "
+
+[git_branch]
+format = '  [$symbol$branch]($style)'
+style = 'yellow'
+disabled = false
+
+[git_state]
+disabled = false
+
+[hostname]
+ssh_only = true
+trim_at = ''
+format = '@[$hostname]($style)'
+style = 'bold green'
+disabled = false
+
+[jobs]
+threshold = 1
+format = '  [$number$symbol]($style)'
+disabled = false
+
+[status]
+# [](bold green)
+format = '[($status )$symbol ]($style)'
+symbol = ''
+recognize_signal_code = true
+map_symbol = true
+disabled = false
+
+[time]
+format = '  [$time  ]($style)'
+use_12hr = true
+time_format = '%I:%M %p'
+style = 'cyan'
+utc_time_offset = 'local'
+disabled = false
+time_range = '-'
+
+[username]
+format = '[ $user]($style)'
+show_always = true
+disabled = false

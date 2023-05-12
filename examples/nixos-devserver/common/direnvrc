@@ -1,0 +1,13 @@
+: ${XDG_CACHE_HOME:=$HOME/.cache}
+
+local hash="$(sha1sum - <<<"${PWD}" | cut -c-40)"
+local name="$(basename ${PWD})"
+
+export WORKSPACE_DIR="${PWD}"
+export CACHE_DIR="${XDG_CACHE_HOME}/workspace/${name}/${hash}"
+
+# https://github.com/direnv/direnv/wiki/Customizing-cache-location
+declare -A direnv_layout_dirs
+direnv_layout_dir() {
+	echo "${direnv_layout_dirs[$PWD]:=${CACHE_DIR}/direnv_layout_dirs}"
+}
