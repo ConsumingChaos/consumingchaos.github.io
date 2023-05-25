@@ -10,7 +10,7 @@ tags:
   - remote
 ---
 
-**Code: <https://github.com/ConsumingChaos/consumingchaos.github.io/tree/master/examples/nixos-devserver>**
+# [Example Code](https://github.com/ConsumingChaos/consumingchaos.github.io/tree/main/examples/nixos-devserver)
 
 # Motivation
 
@@ -22,7 +22,7 @@ tags:
 
 I've been a interested in Nix/NixOS ever since I first became aware of it a few years ago. "Declarative, deterministic/reproducible, and content addressable" are all keywords that resonate with me, but I didn't have a concrete usage to motivate me to dig in. Earlier this year, both [matklad](https://matklad.github.io/) and [Amos](https://fasterthanli.me/) published some blog posts involving Nix and that inspired me to to finally devote the time to learning Nix/NixOS.
 
-The big upside to NixOS (at least to me) is the promise of declaratively managing a fleet of machines. This sounds like a dream come true, and so far my experiences, after the somewhat steep learning curve, have lived up to that! There's a small caveat, which is to provision a new machine, I need to boot off of the NixOS Live CD, set up `authorized_keys` for `root`, and then run [bootstrap.sh](https://github.com/ConsumingChaos/consumingchaos.github.io/tree/master/examples/nixos-devserver/bootstrap.sh). A potential future improvement is using [nixos-generators](https://github.com/nix-community/nixos-generators) to generate an already set up VM image instead of needing to run the bootstrap script. Once things were up and running, I've had no issues since, and the small configuration changes I've needed to make have been a breeze. During the initial iteration of setting up users and `authorized_keys_command`, I may have locked myself out a few times and needed to use the NixOS Live CD to fix things and re-run [nixos-install](https://nixos.org/manual/nixos/stable/index.html#ch-installation), but such is life 😅
+The big upside to NixOS (at least to me) is the promise of declaratively managing a fleet of machines. This sounds like a dream come true, and so far my experiences, after the somewhat steep learning curve, have lived up to that! There's a small caveat, which is to provision a new machine, I need to boot off of the NixOS Live CD, set up `authorized_keys` for `root`, and then run [bootstrap.sh](https://github.com/ConsumingChaos/consumingchaos.github.io/tree/main/examples/nixos-devserver/bootstrap.sh). A potential future improvement is using [nixos-generators](https://github.com/nix-community/nixos-generators) to generate an already set up VM image instead of needing to run the bootstrap script. Once things were up and running, I've had no issues since, and the small configuration changes I've needed to make have been a breeze. During the initial iteration of setting up users and `authorized_keys_command`, I may have locked myself out a few times and needed to use the NixOS Live CD to fix things and re-run [nixos-install](https://nixos.org/manual/nixos/stable/index.html#ch-installation), but such is life 😅
 
 ## Nix Flake Setup
 

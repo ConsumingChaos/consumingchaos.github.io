@@ -67,11 +67,11 @@ rust_stdlib_filegroup(
     name = "rust_std-aarch64-apple-darwin",
     srcs = glob(
         [
-            "rust/lib/rustlib/aarch64-apple-darwin/lib/*.rlib",
-            "rust/lib/rustlib/aarch64-apple-darwin/lib/*.so",
-            "rust/lib/rustlib/aarch64-apple-darwin/lib/*.dylib",
-            "rust/lib/rustlib/aarch64-apple-darwin/lib/*.a",
-            "rust/lib/rustlib/aarch64-apple-darwin/lib/self-contained/**",
+            "lib/rustlib/aarch64-apple-darwin/lib/*.rlib",
+            "lib/rustlib/aarch64-apple-darwin/lib/*.so",
+            "lib/rustlib/aarch64-apple-darwin/lib/*.dylib",
+            "lib/rustlib/aarch64-apple-darwin/lib/*.a",
+            "lib/rustlib/aarch64-apple-darwin/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -82,11 +82,11 @@ rust_stdlib_filegroup(
     name = "rust_std-aarch64-apple-ios",
     srcs = glob(
         [
-            "rust/lib/rustlib/aarch64-apple-ios/lib/*.rlib",
-            "rust/lib/rustlib/aarch64-apple-ios/lib/*.so",
-            "rust/lib/rustlib/aarch64-apple-ios/lib/*.dylib",
-            "rust/lib/rustlib/aarch64-apple-ios/lib/*.a",
-            "rust/lib/rustlib/aarch64-apple-ios/lib/self-contained/**",
+            "lib/rustlib/aarch64-apple-ios/lib/*.rlib",
+            "lib/rustlib/aarch64-apple-ios/lib/*.so",
+            "lib/rustlib/aarch64-apple-ios/lib/*.dylib",
+            "lib/rustlib/aarch64-apple-ios/lib/*.a",
+            "lib/rustlib/aarch64-apple-ios/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -97,11 +97,11 @@ rust_stdlib_filegroup(
     name = "rust_std-aarch64-linux-android",
     srcs = glob(
         [
-            "rust/lib/rustlib/aarch64-linux-android/lib/*.rlib",
-            "rust/lib/rustlib/aarch64-linux-android/lib/*.so",
-            "rust/lib/rustlib/aarch64-linux-android/lib/*.dylib",
-            "rust/lib/rustlib/aarch64-linux-android/lib/*.a",
-            "rust/lib/rustlib/aarch64-linux-android/lib/self-contained/**",
+            "lib/rustlib/aarch64-linux-android/lib/*.rlib",
+            "lib/rustlib/aarch64-linux-android/lib/*.so",
+            "lib/rustlib/aarch64-linux-android/lib/*.dylib",
+            "lib/rustlib/aarch64-linux-android/lib/*.a",
+            "lib/rustlib/aarch64-linux-android/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -112,11 +112,11 @@ rust_stdlib_filegroup(
     name = "rust_std-aarch64-unknown-linux-gnu",
     srcs = glob(
         [
-            "rust/lib/rustlib/aarch64-unknown-linux-gnu/lib/*.rlib",
-            "rust/lib/rustlib/aarch64-unknown-linux-gnu/lib/*.so",
-            "rust/lib/rustlib/aarch64-unknown-linux-gnu/lib/*.dylib",
-            "rust/lib/rustlib/aarch64-unknown-linux-gnu/lib/*.a",
-            "rust/lib/rustlib/aarch64-unknown-linux-gnu/lib/self-contained/**",
+            "lib/rustlib/aarch64-unknown-linux-gnu/lib/*.rlib",
+            "lib/rustlib/aarch64-unknown-linux-gnu/lib/*.so",
+            "lib/rustlib/aarch64-unknown-linux-gnu/lib/*.dylib",
+            "lib/rustlib/aarch64-unknown-linux-gnu/lib/*.a",
+            "lib/rustlib/aarch64-unknown-linux-gnu/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -127,11 +127,11 @@ rust_stdlib_filegroup(
     name = "rust_std-wasm32-unknown-unknown",
     srcs = glob(
         [
-            "rust/lib/rustlib/wasm32-unknown-unknown/lib/*.rlib",
-            "rust/lib/rustlib/wasm32-unknown-unknown/lib/*.so",
-            "rust/lib/rustlib/wasm32-unknown-unknown/lib/*.dylib",
-            "rust/lib/rustlib/wasm32-unknown-unknown/lib/*.a",
-            "rust/lib/rustlib/wasm32-unknown-unknown/lib/self-contained/**",
+            "lib/rustlib/wasm32-unknown-unknown/lib/*.rlib",
+            "lib/rustlib/wasm32-unknown-unknown/lib/*.so",
+            "lib/rustlib/wasm32-unknown-unknown/lib/*.dylib",
+            "lib/rustlib/wasm32-unknown-unknown/lib/*.a",
+            "lib/rustlib/wasm32-unknown-unknown/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -142,11 +142,11 @@ rust_stdlib_filegroup(
     name = "rust_std-wasm32-wasi",
     srcs = glob(
         [
-            "rust/lib/rustlib/wasm32-wasi/lib/*.rlib",
-            "rust/lib/rustlib/wasm32-wasi/lib/*.so",
-            "rust/lib/rustlib/wasm32-wasi/lib/*.dylib",
-            "rust/lib/rustlib/wasm32-wasi/lib/*.a",
-            "rust/lib/rustlib/wasm32-wasi/lib/self-contained/**",
+            "lib/rustlib/wasm32-wasi/lib/*.rlib",
+            "lib/rustlib/wasm32-wasi/lib/*.so",
+            "lib/rustlib/wasm32-wasi/lib/*.dylib",
+            "lib/rustlib/wasm32-wasi/lib/*.a",
+            "lib/rustlib/wasm32-wasi/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -157,11 +157,11 @@ rust_stdlib_filegroup(
     name = "rust_std-x86_64-apple-darwin",
     srcs = glob(
         [
-            "rust/lib/rustlib/x86_64-apple-darwin/lib/*.rlib",
-            "rust/lib/rustlib/x86_64-apple-darwin/lib/*.so",
-            "rust/lib/rustlib/x86_64-apple-darwin/lib/*.dylib",
-            "rust/lib/rustlib/x86_64-apple-darwin/lib/*.a",
-            "rust/lib/rustlib/x86_64-apple-darwin/lib/self-contained/**",
+            "lib/rustlib/x86_64-apple-darwin/lib/*.rlib",
+            "lib/rustlib/x86_64-apple-darwin/lib/*.so",
+            "lib/rustlib/x86_64-apple-darwin/lib/*.dylib",
+            "lib/rustlib/x86_64-apple-darwin/lib/*.a",
+            "lib/rustlib/x86_64-apple-darwin/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -172,11 +172,11 @@ rust_stdlib_filegroup(
     name = "rust_std-x86_64-pc-windows-msvc",
     srcs = glob(
         [
-            "rust/lib/rustlib/x86_64-pc-windows-msvc/lib/*.rlib",
-            "rust/lib/rustlib/x86_64-pc-windows-msvc/lib/*.so",
-            "rust/lib/rustlib/x86_64-pc-windows-msvc/lib/*.dylib",
-            "rust/lib/rustlib/x86_64-pc-windows-msvc/lib/*.a",
-            "rust/lib/rustlib/x86_64-pc-windows-msvc/lib/self-contained/**",
+            "lib/rustlib/x86_64-pc-windows-msvc/lib/*.rlib",
+            "lib/rustlib/x86_64-pc-windows-msvc/lib/*.so",
+            "lib/rustlib/x86_64-pc-windows-msvc/lib/*.dylib",
+            "lib/rustlib/x86_64-pc-windows-msvc/lib/*.a",
+            "lib/rustlib/x86_64-pc-windows-msvc/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -187,11 +187,11 @@ rust_stdlib_filegroup(
     name = "rust_std-x86_64-unknown-linux-gnu",
     srcs = glob(
         [
-            "rust/lib/rustlib/x86_64-unknown-linux-gnu/lib/*.rlib",
-            "rust/lib/rustlib/x86_64-unknown-linux-gnu/lib/*.so",
-            "rust/lib/rustlib/x86_64-unknown-linux-gnu/lib/*.dylib",
-            "rust/lib/rustlib/x86_64-unknown-linux-gnu/lib/*.a",
-            "rust/lib/rustlib/x86_64-unknown-linux-gnu/lib/self-contained/**",
+            "lib/rustlib/x86_64-unknown-linux-gnu/lib/*.rlib",
+            "lib/rustlib/x86_64-unknown-linux-gnu/lib/*.so",
+            "lib/rustlib/x86_64-unknown-linux-gnu/lib/*.dylib",
+            "lib/rustlib/x86_64-unknown-linux-gnu/lib/*.a",
+            "lib/rustlib/x86_64-unknown-linux-gnu/lib/self-contained/**",
         ],
         # Some patterns (e.g. `lib/*.a`) don't match anything, see https://github.com/bazelbuild/rules_rust/pull/245
         allow_empty = True,
@@ -199,19 +199,33 @@ rust_stdlib_filegroup(
 )
 """
 
+_UTILS_BUILD_FILE_CONTENT = """
+package(default_visibility = ["//visibility:public"])
+
+exports_files(glob(["bin/*"]))
+"""
+
 def nix_repositories():
     nixpkgs_flake_package(
         name = "nix_config",
-        nix_flake_file = "//:flake.nix",
-        nix_flake_lock_file = "//:flake.lock",
+        nix_flake_file = "//nix:flake.nix",
+        nix_flake_lock_file = "//nix:flake.lock",
         package = "bazel.config",
         build_file_content = _CONFIG_BUILD_FILE_CONTENT,
     )
 
     nixpkgs_flake_package(
         name = "nix_rust",
-        nix_flake_file = "//:flake.nix",
-        nix_flake_lock_file = "//:flake.lock",
+        nix_flake_file = "//nix:flake.nix",
+        nix_flake_lock_file = "//nix:flake.lock",
         package = "bazel.rust",
         build_file_content = _RUST_BUILD_FILE_CONTENT,
+    )
+
+    nixpkgs_flake_package(
+        name = "nix_utils",
+        nix_flake_file = "//nix:flake.nix",
+        nix_flake_lock_file = "//nix:flake.lock",
+        package = "bazel.utils",
+        build_file_content = _UTILS_BUILD_FILE_CONTENT,
     )

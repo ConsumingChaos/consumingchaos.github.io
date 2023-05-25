@@ -1,0 +1,241 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "advapi32",
+    linkopts = [
+        "advapi32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "cfgmgr32",
+    linkopts = [
+        "cfgmgr32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "credui",
+    linkopts = [
+        "credui.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "d2d1",
+    linkopts = [
+        "d2d1.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "d3d11",
+    linkopts = [
+        "d3d11.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "d3d12",
+    linkopts = [
+        "d3d12.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "d3dcompiler",
+    linkopts = [
+        "d3dcompiler.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "dcomp",
+    linkopts = [
+        "dcomp.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "dwrite",
+    linkopts = [
+        "dwrite.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "dxgi",
+    linkopts = [
+        "dxgi.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "gdi32",
+    linkopts = [
+        "gdi32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "iphlpapi",
+    linkopts = [
+        "iphlpapi.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "kernel32",
+    linkopts = [
+        "kernel32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "msimg32",
+    linkopts = [
+        "msimg32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "netapi32",
+    linkopts = [
+        "netapi32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "ntdll",
+    linkopts = [
+        "ntdll.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "ole32",
+    linkopts = [
+        "ole32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "oleaut32",
+    linkopts = [
+        "oleaut32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "opengl32",
+    linkopts = [
+        "opengl32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "pdh",
+    linkopts = [
+        "pdh.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "powrprof",
+    linkopts = [
+        "powrprof.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "psapi",
+    linkopts = [
+        "psapi.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "secur32",
+    linkopts = [
+        "secur32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "shell32",
+    linkopts = [
+        "shell32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "shlwapi",
+    linkopts = [
+        "shlwapi.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "synchronization",
+    linkopts = [
+        "synchronization.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "user32",
+    linkopts = [
+        "user32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "windowscodecs",
+    linkopts = [
+        "windowscodecs.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "winspool",
+    linkopts = [
+        "winspool.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)
+
+cc_library(
+    name = "ws2_32",
+    linkopts = [
+        "ws2_32.lib",
+    ],
+    target_compatible_with = ["@platforms//os:windows"],
+)

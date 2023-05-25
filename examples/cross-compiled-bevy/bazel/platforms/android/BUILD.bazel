@@ -1,0 +1,23 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "log",
+    linkopts = [
+        "-llog",
+    ],
+    target_compatible_with = select({
+        "@platforms//os:android": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
+
+cc_library(
+    name = "OpenSLES",
+    linkopts = [
+        "-lOpenSLES",
+    ],
+    target_compatible_with = select({
+        "@platforms//os:android": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)

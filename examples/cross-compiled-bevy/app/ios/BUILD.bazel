@@ -1,0 +1,19 @@
+load("@rules_rust//rust:defs.bzl", "rust_shared_library")
+
+filegroup(
+    name = "ios",
+    srcs = [
+        ":aarch64-apple-ios",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+rust_shared_library(
+    name = "aarch64-apple-ios",
+    srcs = glob(["src/**/*.rs"]),
+    crate_name = "app",
+    platform = "//bazel/platforms:aarch64-apple-ios",
+    deps = [
+        "@crate_index//:bevy",
+    ],
+)

@@ -1,5 +1,6 @@
-#include <iostream>
 #include <stdio.h>
+
+#include <iostream>
 
 extern "C" int cc_double_value(int value);
 extern "C" int rust_double_value(int value);

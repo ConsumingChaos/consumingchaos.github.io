@@ -1,0 +1,25 @@
+load("@//bazel/rules:rust_bindgen.bzl", "rust_bindgen")
+
+package(default_visibility = ["//visibility:public"])
+
+rust_bindgen(
+    name = "coreaudio_sys_bindgen",
+    bindgen_flags = [
+        "--blocklist-item",
+        "timezone",
+        "--blocklist-item",
+        "objc_object",
+        "--no-layout-tests",
+        "--distrust-clang-mangling",
+        "--with-derive-default",
+    ],
+    header = select({
+        "@platforms//os:ios": "ios.h",
+        "@platforms//os:macos": "darwin.h",
+    }),
+    target_compatible_with = select({
+        "@platforms//os:ios": [],
+        "@platforms//os:macos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)

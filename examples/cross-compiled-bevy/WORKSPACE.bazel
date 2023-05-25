@@ -1,0 +1,105 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# Workspace Root
+load("//bazel:workspace_root.bzl", "workspace_root")
+
+workspace_root()
+
+# Nix
+http_archive(
+    name = "io_tweag_rules_nixpkgs",
+    sha256 = "54946958c311f48c17c9b2e70683b621fec135258b75173f3900f901d52d8115",
+    strip_prefix = "rules_nixpkgs-2b4702c8a0d1d7ea474ea0913344e8add2759f9c",
+    urls = ["https://github.com/tweag/rules_nixpkgs/archive/2b4702c8a0d1d7ea474ea0913344e8add2759f9c.tar.gz"],
+)
+
+load("@io_tweag_rules_nixpkgs//nixpkgs:repositories.bzl", "rules_nixpkgs_dependencies")
+
+rules_nixpkgs_dependencies()
+
+load("//bazel:nix_repositories.bzl", "nix_repositories")
+
+nix_repositories()
+
+# Toolchains
+register_toolchains(
+    "//bazel/toolchains/cc/aarch64-apple-darwin:toolchain",
+    "//bazel/toolchains/cc/aarch64-apple-ios:toolchain",
+    "//bazel/toolchains/cc/aarch64-linux-android:toolchain",
+    "//bazel/toolchains/cc/aarch64-unknown-linux-gnu:toolchain",
+    "//bazel/toolchains/cc/wasm32-unknown-unknown:toolchain",
+    "//bazel/toolchains/cc/wasm32-wasi:toolchain",
+    "//bazel/toolchains/cc/x86_64-apple-darwin:toolchain",
+    "//bazel/toolchains/cc/x86_64-pc-windows-msvc:toolchain",
+    "//bazel/toolchains/cc/x86_64-unknown-linux-gnu:toolchain",
+    "//bazel/toolchains/cc/x86_64-unknown-nixos-gnu:toolchain",
+    "//bazel/toolchains/rust/aarch64-apple-darwin:toolchain",
+    "//bazel/toolchains/rust/aarch64-apple-ios:toolchain",
+    "//bazel/toolchains/rust/aarch64-linux-android:toolchain",
+    "//bazel/toolchains/rust/aarch64-unknown-linux-gnu:toolchain",
+    "//bazel/toolchains/rust/wasm32-unknown-unknown:toolchain",
+    "//bazel/toolchains/rust/wasm32-wasi:toolchain",
+    "//bazel/toolchains/rust/x86_64-apple-darwin:toolchain",
+    "//bazel/toolchains/rust/x86_64-pc-windows-msvc:toolchain",
+    "//bazel/toolchains/rust/x86_64-unknown-linux-gnu:toolchain",
+    "//bazel/toolchains/rust/x86_64-unknown-nixos-gnu:toolchain",
+)
+
+# Rust
+# http_archive(
+#     name = "rules_rust",
+#     sha256 = "50272c39f20a3a3507cb56dcb5c3b348bda697a7d868708449e2fa6fb893444c",
+#     urls = ["https://github.com/bazelbuild/rules_rust/releases/download/0.22.0/rules_rust-v0.22.0.tar.gz"],
+# )
+local_repository(
+    name = "rules_rust",
+    path = "/home/jleitch/code/rules_rust",
+)
+
+load("@rules_rust//rust:repositories.bzl", "rules_rust_dependencies")
+
+rules_rust_dependencies()
+
+load("@rules_rust//crate_universe:defs.bzl", "crates_repository", "render_config", "splicing_config")
+load("//bazel/cargo:crates_repository.bzl", CARGO_ANNOTATIONS = "ANNOTATIONS", CARGO_PACKAGES = "PACKAGES")
+
+new_local_repository(
+    name = "cargo-bazel",
+    build_file_content = """exports_files(["cargo-bazel"])""",
+    path = "/home/jleitch/code/rules_rust/crate_universe/target/debug/",
+)
+
+crates_repository(
+    name = "crate_index",
+    annotations = CARGO_ANNOTATIONS,
+    cargo_lockfile = "//bazel/cargo:Cargo.lock",
+    generate_build_scripts = False,
+    # generator = "@nix_utils//:bin/cargo-bazel",
+    generator = "@cargo-bazel//:cargo-bazel",
+    lockfile = "//bazel/cargo:cargo-bazel-lock.json",
+    packages = CARGO_PACKAGES,
+    render_config = render_config(
+        default_alias_rule = "opt",
+    ),
+    rust_toolchain_cargo_template = "@nix_rust//:bin/{tool}",
+    rust_toolchain_rustc_template = "@nix_rust//:bin/{tool}",
+    splicing_config = splicing_config(
+        resolver_version = "2",
+    ),
+    supported_platform_triples = [
+        "aarch64-apple-darwin",
+        "aarch64-apple-ios",
+        "aarch64-linux-android",
+        "aarch64-unknown-linux-gnu",
+        "wasm32-unknown-unknown",
+        "wasm32-wasi",
+        "x86_64-apple-darwin",
+        "x86_64-pc-windows-msvc",
+        "x86_64-unknown-linux-gnu",
+        "x86_64-unknown-nixos-gnu",
+    ],
+)
+
+load("@crate_index//:defs.bzl", "crate_repositories")
+
+crate_repositories()

@@ -1,0 +1,27 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "alsa",
+    linkopts = [
+        "-lasound",
+    ],
+    tags = ["manual"],
+    target_compatible_with = select({
+        "@platforms//os:linux": [],
+        "@platforms//os:nixos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
+
+cc_library(
+    name = "udev",
+    linkopts = [
+        "-ludev",
+    ],
+    tags = ["manual"],
+    target_compatible_with = select({
+        "@platforms//os:linux": [],
+        "@platforms//os:nixos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)

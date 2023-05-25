@@ -1,0 +1,20 @@
+load("@bazel_skylib//rules:build_test.bzl", "build_test")
+
+exports_files([
+    ".rustfmt.toml",
+])
+
+# Disabled targets need the user to supply a sysroot in `flake.nix` first.
+
+# Explicit filegroup as globbed `//...` will skip targets without an error if
+# `cargo-bazel` doesn't generate a target for a given platform.
+build_test(
+    name = "cross-compiled-bevy",
+    targets = [
+        "//app/android",
+        # "//app/darwin",
+        # "//app/ios",
+        "//app/linux",
+        # "//app/windows",
+    ],
+)

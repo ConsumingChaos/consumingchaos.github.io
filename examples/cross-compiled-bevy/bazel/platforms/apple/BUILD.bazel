@@ -1,0 +1,55 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "objc",
+    linkopts = [
+        "-lobjc",
+    ],
+    target_compatible_with = select({
+        "@platforms//os:ios": [],
+        "@platforms//os:macos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
+
+cc_library(
+    name = "AudioToolbox",
+    linkopts = [
+        "-framework",
+        "AudioToolbox",
+    ],
+    target_compatible_with = select({
+        "@platforms//os:ios": [],
+        "@platforms//os:macos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
+
+cc_library(
+    name = "AudioUnit",
+    linkopts = select({
+        "@platforms//os:ios": [],  # Nothing to link on iOS.
+        "@platforms//os:macos": [
+            "-framework",
+            "AudioUnit",
+        ],
+    }),
+    target_compatible_with = select({
+        "@platforms//os:ios": [],
+        "@platforms//os:macos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
+
+cc_library(
+    name = "CoreAudio",
+    linkopts = [
+        "-framework",
+        "CoreAudio",
+    ],
+    target_compatible_with = select({
+        "@platforms//os:ios": [],
+        "@platforms//os:macos": [],
+        "//conditions:default": ["@platforms//:incompatible"],
+    }),
+)
