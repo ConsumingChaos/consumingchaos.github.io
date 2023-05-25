@@ -10,7 +10,7 @@ tags:
   - remote
 ---
 
-**Code: <https://github.com/ConsumingChaos/consumingchaos.github.io/tree/master/examples/nixos-devserver>**
+# [Example Code](https://github.com/ConsumingChaos/consumingchaos.github.io/tree/master/examples/nixos-devserver)
 
 # Motivation
 
