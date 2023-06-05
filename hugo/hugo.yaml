@@ -29,3 +29,8 @@ params:
   socialIcons:
     - name: RSS
       url: index.xml
+  author:
+    avatar: "profile.jpg"
+    intro: "Consuming Chaos Blog"
+    name: "James Leitch"
+    description: "Software Engineerng and Game Development blog by James Leitch"

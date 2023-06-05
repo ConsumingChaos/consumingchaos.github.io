@@ -1,0 +1,15 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_binary(
+    name = "cc_binary",
+    srcs = select({
+        # See comment in `cc_binary_wasm32-unknown-unknown.cc`.
+        "@platforms//os:none": ["cc_binary_wasm32-unknown-unknown.cc"],
+        "//conditions:default": ["cc_binary.cc"],
+    }),
+    tags = ["platform_missing"],
+    deps = [
+        "//cc_library",
+        "//rust_library:rust_library_cc",
+    ],
+)
