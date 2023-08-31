@@ -126,6 +126,30 @@ def compile_action_configs(
 
     return [
         action_config(
+            action_name = ACTION_NAMES.assemble,
+            tools = [tool(path = "{}/bin/clang".format(clang))],
+            flag_sets = [
+                required_compile_flag_set,
+                compile_flag_set,
+                dbg_compile_flag_set,
+                fastbuild_compile_flag_set,
+                opt_compile_flag_set,
+                BAZEL_COMPILE_FLAG_SET,
+            ],
+        ),
+        action_config(
+            action_name = ACTION_NAMES.preprocess_assemble,
+            tools = [tool(path = "{}/bin/clang".format(clang))],
+            flag_sets = [
+                required_compile_flag_set,
+                compile_flag_set,
+                dbg_compile_flag_set,
+                fastbuild_compile_flag_set,
+                opt_compile_flag_set,
+                BAZEL_COMPILE_FLAG_SET,
+            ],
+        ),
+        action_config(
             action_name = ACTION_NAMES.c_compile,
             tools = [tool(path = "{}/bin/clang".format(clang))],
             flag_sets = [
