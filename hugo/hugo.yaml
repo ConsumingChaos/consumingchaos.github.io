@@ -5,6 +5,7 @@ theme: hugo-blog-awesome
 
 defaultContentLanguage: en-us
 enableEmoji: true
+enableRobotsTXT: true
 
 googleAnalytics: "G-B60D5XNZS2"
 disqusShortname: "consuming-chaos"
